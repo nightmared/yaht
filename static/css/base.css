@@ -1,0 +1,71 @@
+body {
+    margin: 0.5em 0 2em 0;
+}
+
+nav {
+    text-align: center;
+}
+
+#nav {
+    text-align: center;
+    display: inline-block;
+}
+
+#nav a {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    transition: font-size 0.8s ease;
+    color: black;
+}
+
+#nav a img {
+    height: 0.8em;
+}
+
+#nav a:not(:first-child) {
+    margin-left: 1em;
+}
+
+#nav a:hover {
+    font-size: 1.7em;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 0.5em;
+    background-color: white;
+}
+
+footer #footer {
+    display: inline-block;
+}
+
+main {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.article-description {
+    color: black;
+    text-decoration: none;
+
+}
+
+.article-description .publication-date {
+    font-style: italic;
+    text-align: right;
+    margin-top: -2em;
+}
+
+.article-description .read-more {
+    color: rgb(220, 25, 25);
+    font-weight: bold;
+}
+
+.article-description .read-more:hover {
+    text-decoration: underline;
+}
