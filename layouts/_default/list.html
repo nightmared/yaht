@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+
+{{ range .Pages.ByPublishDate.Reverse }}
+  <a class="article-description" href="{{ .Permalink }}">
+          <h2>{{ .Title }}</h2>
+          <p class="publication-date">Published on {{ .Date | dateFormat .Site.Params.dateFormat }}</p>
+          <p>{{ .Summary }}</p>
+          <p class="read-more">Read more...</p>
+  </a>
+  <br>
+{{ end }}
+
+{{ end }}

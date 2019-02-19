@@ -1,0 +1,13 @@
+<nav>
+    <div id="nav">
+      {{ $showActiveNav := .Site.Params.showActiveNav }}
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.nav }}
+
+        {{ $icon := printf "<img src=\"https://blog.nightmared.fr/static/icons/%s.svg\">" .Pre }}
+        {{ $text := print $icon " " .Name | safeHTML }}
+        <a href="{{ .URL }}">{{ $text }}</a>
+      {{ end }}
+      <hr>
+    </div>
+</nav>

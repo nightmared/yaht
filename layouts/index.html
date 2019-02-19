@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ with .Content }}
+
+  <h1>{{ $.Page.Title }}</h1>
+  {{ . }}
+{{ else }}
+  <h1>List of posts:</h1>
+  {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+  {{ $paginator := .Paginate ( first 15 $paginator.Pages.ByPublishDate.Reverse ) }}
+  {{ range $paginator.Pages }}
+    <a class="article-description" href="{{ .Permalink }}"><strong>{{ .Title }}</strong> - Published on {{ .Date | dateFormat .Site.Params.dateFormat }}
+    </a>
+  <br>
+</p>
+{{ end }}
+
+{{ end }}
+
+{{ end }}
