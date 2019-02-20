@@ -1,9 +1,13 @@
 body {
-    margin: 0.5em 0 2em 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 nav {
+    flex: 0 1 auto;
     text-align: center;
+    margin-top: 0.5rem;
 }
 
 #nav {
@@ -17,6 +21,7 @@ nav {
     font-size: 1.5em;
     transition: font-size 0.8s ease;
     color: black;
+    display: inline-block;
 }
 
 #nav a img {
@@ -32,21 +37,15 @@ nav {
 }
 
 footer {
+    flex-shrink: 0;
     text-align: center;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    padding-bottom: 0.5em;
     background-color: white;
 }
 
-footer #footer {
-    display: inline-block;
-}
-
 main {
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 0 2rem 1rem 2rem;
+    flex: 1 0 auto;
 }
 
 .article-description {
@@ -55,17 +54,34 @@ main {
 
 }
 
+.article-description .article-metadata {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .article-description .publication-date {
+    flex: 0 0 auto;
     font-style: italic;
-    text-align: right;
-    margin-top: -2em;
+
 }
 
 .article-description .read-more {
+    flex: 1 0 auto;
     color: rgb(220, 25, 25);
     font-weight: bold;
 }
 
 .article-description .read-more:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 750px) {
+    footer {
+        display: none;
+    }
+
+    main {
+        margin-bottom: 0;
+    }
 }

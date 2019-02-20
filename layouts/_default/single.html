@@ -3,4 +3,6 @@
 <h1>{{ .Title }}</h1>
 {{ .Content }}
 
+<i>Published on {{ .Date | dateFormat .Site.Params.dateFormat }}</i>
+
 {{ end }}

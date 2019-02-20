@@ -5,9 +5,11 @@
 {{ range .Pages.ByPublishDate.Reverse }}
   <a class="article-description" href="{{ .Permalink }}">
           <h2>{{ .Title }}</h2>
-          <p class="publication-date">Published on {{ .Date | dateFormat .Site.Params.dateFormat }}</p>
           <p>{{ .Summary }}</p>
-          <p class="read-more">Read more...</p>
+          <div class="article-metadata">
+              <p class="read-more">Read more...</p>
+              <p class="publication-date">Published on {{ .Date | dateFormat .Site.Params.dateFormat }}</p>
+          </div>
   </a>
   <br>
 {{ end }}
