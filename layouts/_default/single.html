@@ -3,6 +3,12 @@
 <h1>{{ .Title }}</h1>
 {{ .Content }}
 
-<i>Published on {{ .Date | dateFormat .Site.Params.dateFormat }}</i>
+<i>
+Published on {{ .Date.Format .Site.Params.dateFormat }}
+{{ if .Lastmod }}
+- Last updated on {{ .Lastmod.Format .Site.Params.dateFormat }}
+{{ end }}
+</i>
+
 
 {{ end }}

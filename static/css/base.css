@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -28,12 +29,13 @@ nav {
     height: 0.8em;
 }
 
-#nav a:not(:first-child) {
-    margin-left: 1em;
+.inline-svg {
+  display: inline-block;
+  width: 1em;
 }
 
-#nav a:hover {
-    font-size: 1.7em;
+#nav a:not(:first-child) {
+    margin-left: 1em;
 }
 
 footer {
@@ -41,6 +43,7 @@ footer {
     text-align: center;
     width: 100%;
     background-color: white;
+    padding-bottom: 0.35em;
 }
 
 main {
